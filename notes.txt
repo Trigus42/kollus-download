@@ -1,0 +1,3 @@
+API References:
+https://web.archive.org/web/20230331124824/https://support.kollus.jp/developer/
+https://web.archive.org/web/20230331124735/http://wiki.dev.kollus.com/wiki/Videogateway/ja

@@ -1,0 +1,1 @@
+docker ps | grep kollus_download_ | awk '{print $1}' |  xargs docker rm -f
