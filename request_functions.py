@@ -52,8 +52,9 @@ def get_media_info(media_url: str | None, server: ServerInfo):
         break
 
     if info_dict:
+        title_match = re.search(r"\d+_\d+_(?P<title>.+)", info_dict["title"])
         return Mediainfo(
-            title = re.search(r"\d+_\d+_(?P<title>.+)", info_dict["title"]).group("title"),
+            title = title_match.group("title") if title_match else info_dict["title"],
             title_raw = info_dict["title"],
             subtitles = [
                 SubtitleInfo(
@@ -61,7 +62,7 @@ def get_media_info(media_url: str | None, server: ServerInfo):
                     name=subtitle.get("name"),
                     language=subtitle.get("language")
                 ) for subtitle in info_dict["subtitle"]
-            ],
+            ] if "subtitle" in info_dict else [],
             media_key=info_dict["media_key"]
         )
     else:

@@ -2,3 +2,5 @@ __pycache__
 /downloads
 /download_urls.txt
 /containers.txt
+.venv
+server/mount/KollusPlayer*

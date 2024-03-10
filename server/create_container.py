@@ -35,7 +35,7 @@ for i in range(amount):
                 mv pem /usr/local/share/ca-certificates/mitmproxy.crt && \
                 update-ca-certificates && \
                 xvfb-run wine /mount/KollusPlayer3/KollusAgent.exe & \
-                /mount/proxy/proxy \
+                /mount/http-to-https-proxy/proxy \
             "
         """
     )
